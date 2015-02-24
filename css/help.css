@@ -1,0 +1,9 @@
+.help_container {
+    width: 100%;
+    height: 100%;
+    background: hsl(0,0%,100%);
+}
+.help_container iframe {
+    width: 100%;
+    height: 100%;
+}

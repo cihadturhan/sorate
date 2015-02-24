@@ -1,0 +1,79 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-multiply:before {
+	content: "\e600";
+}
+.icon-checkmark:before {
+	content: "\e601";
+}
+.icon-uniF488:before {
+	content: "\e602";
+}
+.icon-uniF489:before {
+	content: "\e603";
+}
+.icon-uniF48A:before {
+	content: "\e604";
+}
+.icon-uniF48B:before {
+	content: "\e605";
+}
+.icon-pigpenj:before {
+	content: "\e606";
+}
+.icon-trash:before {
+	content: "\e607";
+}
+.icon-save:before {
+	content: "\e608";
+}
+.icon-edit:before {
+	content: "\e609";
+}
+.icon-move:before {
+	content: "\e60a";
+}
+.icon-checkbox:before {
+	content: "\e60b";
+}
+.icon-checkbox2:before {
+	content: "\e60c";
+}
+.icon-radiobutton:before {
+	content: "\e60d";
+}
+.icon-plus:before {
+	content: "\e60e";
+}
+.icon-preview:before {
+	content: "\e60f";
+}
+.icon-spinner:before {
+	content: "\e611";
+}
+.icon-export:before {
+	content: "\e610";
+}

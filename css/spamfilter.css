@@ -1,0 +1,881 @@
+.spamfilter_container {
+    margin: auto;
+    text-align: center;
+    overflow: auto;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;  
+    background-position: center center;  
+    -webkit-perspective: 2000;  -webkit-perspective-origin: 50% 50%;
+    padding: 10px;
+    padding-top: 80px;
+}
+
+.spamfilter_container .submodule-container.left {
+    float: left;
+}
+.spamfilter_container .submodule-container.right {
+    float: right;
+}
+
+.spamfilter_container .main_left {
+    width: 60%;
+    float: left;
+    height: 95%;
+}
+.spamfilter_container .main_right {
+    width: 39.5%;  float: right;
+    height: 95%;
+    -webkit-transform: rotateY(90deg);  
+    -webkit-transform-origin: 100% 50%;  
+}
+.spamfilter_container h1 {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.spamfilter_container .tweet_summary.container {
+    height: 100%;
+}
+
+.spamfilter_container table.result_table tr{
+    height: 23px;
+    width: 110px;   
+    display: table-row !important;
+}
+
+.spamfilter_container tbody tr:nth-child(odd) {
+    background-color: hsl(192, 20%, 95%);
+}
+
+.spamfilter_container table.result_table thead tr{
+    background-color: white;
+    width: 100%;  
+    height: 25px;        
+    border-radius: 4px 4px 0px 0px;  
+    background: hsl(0, 0%, 89%);    
+    padding-top: 7px;  
+    color: hsl(0, 0%, 20%);  
+    font-size: 15px;  
+    text-shadow: 0 1px 1px hsl(0, 100%, 100%);  
+    font-family: Verdana;  
+    text-align: center;
+}
+
+.spamfilter_container table.result_table {
+    width: 100%;
+    border-radius: 5px;  border-bottom: 1px solid hsl(0, 0%, 80%);  
+    border-top: 1px solid hsl(0, 0%, 91%);  border-left: 1px solid hsl(0, 0%, 85%);  border-right: 1px solid hsl(0, 0%, 85%);
+    border-collapse: separate;
+}
+.spamfilter_container table.result_table  th {
+    vertical-align: middle;
+    padding: 0 10px 0 10px;
+    margin: 0;
+}
+
+.spamfilter_container table.result_table th:not(:nth-last-child(1)), .spamfilter_container table.result_table td:not(:nth-last-child(1)){
+    border-right: 1px solid hsl(0, 0%, 83%);
+    border-left: 1px solid hsl(0, 0%, 97%);
+}
+
+.spamfilter_container .w4 table.result_table td {
+    max-width: 275px;
+}
+
+.spamfilter_container .w2 table.result_table td {
+    max-width: 160px;
+}
+
+.spamfilter_container table.result_table tr:nth-child(1) th:nth-child(1){
+    /* border-top-left-radius: 5px; */   
+}
+
+.spamfilter_container table.result_table th:nth-last-child(1){
+    border-top-right-radius: 5px;   
+    text-align: center;
+}
+
+.spamfilter_container table.result_table tr:nth-last-child(1) td:nth-child(1){
+    border-bottom-left-radius: 5px;   
+}
+
+.spamfilter_container table.result_table tr:nth-last-child(1) td:nth-last-child(1){
+    border-bottom-right-radius: 5px;   
+}
+
+.spamfilter_container table.result_table  td {
+    vertical-align: middle;
+    text-align: center;
+    min-width: 25px;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0 5px 0 5px;
+}
+
+
+.spamfilter_container table.result_table th.prior {
+    color: hsl(331, 71%, 52%);
+}
+
+.spamfilter_container th.prior:after {
+    content: ">";
+    font-family: icomoon;
+    content: "\f48b";
+    margin-left: 5px;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transform: rotateZ(0deg);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    font-size: 12px;
+}
+
+.spamfilter_container .table_header h1 {
+    font-size: 28px;
+}
+.spamfilter_container .table_header h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: hsl(108, 45%, 45%);
+}
+.spamfilter_container .table_header h3 {
+    margin-top: 10px;
+    font-size: 17px;
+    color: hsl(108, 15%, 48%);
+    font-weight: normal;
+}
+
+.spamfilter_container .toplist_summary.container {  
+    padding-top: 10px;  
+    overflow: auto;  
+    position: relative;
+    -webkit-transform: rotateY(-90deg);  -webkit-transform-origin: 0 50%;  
+    opacity: 0;
+}
+
+.spamfilter_container .tweet_summary {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    padding-top: 0;
+}
+
+.spamfilter_container div.buttons {
+    width: 100%;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.spamfilter_container .new_tweets {
+    text-align: right;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 5px;
+    height: 30px;
+    display: none;
+    height: 30px;
+    overflow: hidden;
+    display: none !important;
+}
+
+.spamfilter_container .tweet_summary ul {
+    list-style: none;
+    text-align: left;
+    margin: 5px;
+    padding: 0 5px 0 5px;
+    overflow-y: scroll;
+    max-height: calc(100% - 40px);
+    height: 100%;
+}
+
+.spamfilter_container div.buttons {
+    width: 100%;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 20px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.spamfilter_container button[name*=tweets] {
+    height: 30px;
+    width: 40px;
+    font-size: 1em;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.spamfilter_container button[name=show_tweets] {
+    width: auto;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    height: 30px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    position: relative;
+    font-size: 14px;
+    width: -webkit-calc(100% - 210px);
+}
+
+.spamfilter_container button[name=show_tweets]:disabled{
+    color: black !important;
+    text-shadow: none;
+    cursor: default;
+}
+
+.spamfilter_container .autoupdate {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+
+
+.spamfilter_container .cb_container {
+    width: 30px;
+    height: 10px;
+    background: hsl(0, 0%, 93%);
+    margin: 2px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 1px 1px hsla(0, 0%, 0%, 0.5), 0px 1px 0px hsla(0, 100%, 100%, 0.2);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+    box-shadow: inset 0px 1px 1px hsla(0, 0%, 0%, 0.5), 0px 1px 0px hsla(0, 100%, 100%, 0.2);
+    display: inline-block;
+    margin-right: 10px;
+    background-image: -webkit-linear-gradient(left, hsl(127, 64%, 70%) 50%, hsl(0, 0%, 79%) 50%);
+}
+
+.spamfilter_container .cb_container input[type=checkbox] {
+    opacity: 0;
+    width: 100%;
+    height: 10px;
+    padding: 0;
+    top: 0;
+    margin: 0;
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+}
+
+.spamfilter_container .cb_container input[type=checkbox] + label {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    transition: left .4s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    box-shadow: 0px 1px 3px 0px hsla(0, 0%, 0%, 0.5);
+    background: hsl(76, 100%, 98%);
+    background: -webkit-linear-gradient(top, hsl(0, 100%, 100%) 0%,hsl(0, 0%, 91%) 100%);
+    pointer-events: none;
+    color: hsla(0, 0%, 0%, 0);
+    font-size: 29px;
+    line-height: 0px;
+    padding: 0;
+    font-weight: bold;
+    text-shadow: 0px -1px 2px hsla(0, 0%, 0%, 0.5), 0px 1px 2px hsla(0, 100%, 100%, 0.5);
+    text-align: center;
+    left: 0px;
+    text-shadow: none;
+    color: hsl(0, 100%, 74%);
+}
+
+.spamfilter_container .cb_container input[type=checkbox]:checked + label {
+    left: -webkit-calc(100% - 13px);
+    left: -moz-calc(100% - 13px);
+    color: hsl(127, 63%, 47%) !important;
+    text-align: center;
+    padding: 0;
+    left: -webkit-calc(100% - 16px);
+}
+
+.spamfilter_container .w4 .general_tweet_container ul li{
+    margin-right: 10px;
+    width: -webkit-calc(50% - 20px);
+}
+
+.spamfilter_container .general_tweet_container ul li {
+    min-height: 85px;
+    height: auto;
+    opacity: 1;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 100%;
+}
+
+.spamfilter_container .general_tweet_container ul li.even {
+    background-color: hsl(192, 20%, 97%);
+}
+
+
+.spamfilter_container .tweet_time {
+    text-align: right;
+    display: block
+}
+
+.spamfilter_container .fullname {
+    display: none;
+}
+
+.spamfilter_container .emphasized {
+    font-weight: bold;
+    color: hsl(0, 40%, 42%);
+    text-shadow: 0 0 1px hsl(0, 0%, 83%)
+}
+
+
+
+.spamfilter_container .instant_summary.container {
+    -webkit-transform: rotateY(-90deg);  -webkit-transform-origin: 0 50%;  opacity: 0;
+}
+
+.spamfilter_container  div.container.header {
+    width: -webkit-calc(100% - 20px);
+    padding: 5px 5px 5px 5px !important;
+    z-index: 7;
+    top: 10px;
+    min-height: 70px;
+    position: absolute;
+    text-align: center;
+}
+
+.spamfilter_container .packery {
+    background: transparent;
+    max-width: 1650px;;
+    margin: 0 auto;
+}
+
+
+.spamfilter_container .item {
+    width: 40px;
+    height: 40px;
+    float: left;
+    background: transparent;
+    border: none;
+    transition: width 0.1s linear;
+    padding: 10px;
+}
+
+.spamfilter_container .item:hover {
+    border-color: white;
+}
+
+.spamfilter_container .item.w2 { width:   330px;  }
+.spamfilter_container .item.h4 { height: 660px; }
+.spamfilter_container .item.h2 { height:  330px; }
+.spamfilter_container .item.w4 { width:  660px; }
+
+.spamfilter_container .item div.container{
+    width: 100%;
+    height:100%;
+}
+.spamfilter_container .item.ui-draggable-dragging,
+.spamfilter_container .item.is-positioning-post-drag {
+    z-index: 4 !important;
+}
+
+
+
+
+.spamfilter_container .ew-resize {
+    position: absolute;
+    top: 65px;
+    width: 12px;
+    height: -webkit-calc(100% - 100px);
+    right: 10px;
+    background: hsl(0, 100%, 89%);
+    cursor: ew-resize;
+    background-color: hsl(0, 0%, 98%);      
+    border-bottom: 1px solid hsl(0, 0%, 70%);  
+    border-top: 1px solid hsl(0, 0%, 85%);  
+    border-left: 1px solid hsl(0, 0%, 80%);  
+    border-right: 1px solid hsl(0, 0%, 80%);
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    border-radius: 2px;
+}
+
+
+.spamfilter_container .ns-resize {
+    position: absolute;
+    left: 30px;
+    height: 12px;
+    width: -webkit-calc(100% - 70px);
+    bottom: 10px;
+    background: hsl(0, 100%, 89%);
+    cursor: ns-resize;
+    background-color: hsl(0, 0%, 98%);    
+    border-radius: 2px;   
+    border-bottom: 1px solid hsl(0, 0%, 70%); 
+    border-top: 1px solid hsl(0, 0%, 85%);  
+    border-right: 1px solid hsl(0, 0%, 80%);
+    border-left: 1px solid hsl(0, 0%, 80%);
+    opacity: 0;
+    -webkit-transition: opacity 0.15s ease-in-out;
+}
+
+.spamfilter_container .news-resize {
+    position: absolute;
+    right: 11px;
+    bottom: 11px;
+    cursor: nwse-resize;
+    background-color: transparent;
+    color: hsl(0, 0%, 98%);
+    text-shadow: 0px 0px 2px hsla(0, 0%, 0%, 0.82);
+    opacity: 0;
+    -webkit-transition: opacity 0.15s ease-in-out;
+    font-size: 16px;
+}
+
+
+.spamfilter_container .item:hover .ew-resize{
+    opacity: 1;
+}
+
+.spamfilter_container .item:hover .ns-resize{
+    opacity: 1;
+}
+
+.spamfilter_container .item:hover .news-resize{
+    opacity: 1;
+}
+
+
+.spamfilter_container .container .graph {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    position: relative;
+}
+
+.spamfilter_container .general_tweet_container {
+    height: 100%;
+}
+.spamfilter_container .container_header {
+    cursor: move;
+}
+
+.spamfilter_container .container .graph .table_container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.spamfilter_container .w2 .graph .w2-hide {
+    display: none;
+}
+
+.spamfilter_container .swiper-container, .player-container {
+    width: 100%;
+    height: -webkit-calc(100% - 70px);
+    background-color: white;
+    position: relative;
+}
+
+
+.spamfilter_container .img-container .img-wrapper{
+    width: 94%;
+    height: 50%;
+    position: relative;
+    opacity: 1 !important;
+    -webkit-animation: none !important;
+    -webkit-transform: none !important;
+    border: none;
+    background-position: center;;
+    left: 0;
+    padding: 5px 5px;
+    margin: 0;
+}
+
+.spamfilter_container .img-container .outer-img{
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.7);
+    padding: 10px;
+    border-radius: 4px;
+    background-color: hsla(0, 0%, 0%, 0.05);
+
+}
+
+
+.spamfilter_container .img-container .img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transform-origin: 50% -10px;
+    border-radius: 0 0 5px 5px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.34);
+    background-position: center center;
+    cursor: pointer;
+}
+
+
+.spamfilter_container .nav-container {
+    height: 73px;
+    width: 100%;
+    background: hsla(0, 0%, 0%, 0.23);
+    z-index: 3;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    box-shadow: inset 0px 1px 1px 0px hsla(0, 0%, 0%, 0.7);
+    position: relative;
+}
+
+.spamfilter_container .nav-wrapper, .spamfilter_container .video-nav-wrapper{
+    height: 100%;
+    overflow-x: visible;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.spamfilter_container .swiper-pagination-switch, .spamfilter_container .video-thumb {
+    width: 66px;
+    height: 50px;
+    margin: 3px 3px 0 2px;
+    background-size: cover;
+    display: inline-block;
+    white-space: normal;
+    cursor: pointer;
+    box-shadow: 0px 1px 1px 0px hsla(0, 0%, 0%, 0.7);
+    background-position: center center;
+    border: 1px solid hsla(0, 100%, 100%, 0.8);
+    border-radius: 2px;
+    vertical-align: top;                                
+    position: relative;
+}
+
+.spamfilter_container .swiper-pagination-switch:hover, .spamfilter_container .video-thumb:hover{
+    opacity: 1;
+}
+
+.spamfilter_container .swiper-pagination-switch:last-child, .spamfilter_container .video-thumb:last-child{
+    margin-right:30px; 
+}
+
+.spamfilter_container .swiper-active-switch {
+    box-shadow: 0 1px 5px hsl(211, 100%, 78%);	
+    border: 1px solid hsl(211, 100%, 42%);
+    opacity: 1;
+}
+
+.spamfilter_container .imageviewer {
+    position: absolute;
+    background: hsla(0, 0%, 0%, 0.15);
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.spamfilter_container .submodule-container {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.spamfilter_container .left .packery {
+    float: right;
+}
+
+.spamfilter_container .right .packery {
+    float: left;
+}
+
+/* KEYWORD SELECTION START */
+
+
+.spamfilter_container .add_edit_container {
+    vertical-align:top;
+}
+
+.icon-plus {
+    vertical-align: top;
+}
+
+.spamfilter_container div.selection_container {
+    opacity: 1;
+    -webkit-transform: none;
+}
+
+/* INPUT END */
+
+.spamfilter_container .loading.icon-spinner {
+    margin: 140px auto 0 auto;
+    display: block;
+    opacity: 1;
+    font-size: 48px;
+    width: 48px;
+}
+
+.spamfilter_container .container_overlay{
+    position: absolute;
+    z-index: 12;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 93%, 0.4);
+    top: 0;
+    left: 0;
+}
+
+/* DAYPICKER */
+.spamfilter_container input[name=daypicker] {
+    width: 210px;
+}
+
+/*   */
+.spamfilter_container .hit-count-div{
+    color: #FFF;
+    padding-left: 0px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 0;
+    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.9);
+    font-size: 25px;
+    text-shadow: 1px 1px 1px #000;
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    padding-top: 10px;
+    pointer-events: none;
+}
+
+.spamfilter_container a {
+    text-decoration: none;
+    color: hsl(0, 0%, 27%);
+}
+
+.spamfilter_container a:hover {
+    color: #28AAE2 !important;
+}
+
+.spamfilter_container a .full-name {
+    color: hsl(0, 0%, 50%);
+}
+
+.spamfilter_container a:hover .full-name{
+    color: inherit;
+}
+
+.spamfilter_container .highcharts-axis-labels span {
+    overflow: hidden;
+    width: 250px;
+    text-overflow: ellipsis;
+}
+
+.spamfilter_container .w2.h2 .highcharts-axis-labels span{
+    width: 100px;
+}
+
+.spamfilter_container .shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    background-color: hsl(0, 0%, 0%);
+    opacity: 0;
+    z-index: 10;
+    display: none;
+    border-radius: 3px;
+}
+
+.spamfilter_container .dialog{
+    width: 600px;
+    height: 500px;
+    position: absolute;
+    margin: 0;
+    display: none; 
+    z-index: 10;
+    -webkit-transform-origin: 0 0;
+    left: 55%;
+    top: 10%;
+}
+
+.spamfilter_container .myIframe {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: relative;
+}
+.spamfilter_container .dialog .ui-dialog-content {
+    width: 100% !important;  
+    height: calc(100% - 30px) !important;  
+    padding: 0 !important;  
+    overflow: hidden;
+}
+
+
+.spamfilter_container a.statuslink {
+    word-break: break-word;
+    white-space: pre-line;
+    padding: 12px 0 12px 0;
+    line-height: 20px;
+    font-family: Helvetica, Arial;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+}
+
+.spamfilter_container .button-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: right;
+}
+
+.spamfilter_container .loading_overlay{
+    display: none;
+    background-color: hsla(0, 0%, 0%, 0.25);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    padding: 120px 0 0 0;
+    font-size: 20px;
+    text-shadow: 0px 1px hsl(0, 0%, 0%);
+    color: hsl(0, 100%, 100%);
+}
+
+
+.spamfilter_container .preview.icon-preview {
+    vertical-align: top;
+    margin-left: 100px
+}
+
+.spamfilter_container .dialog_overlay.icon-preview {
+    font-size: 333px;
+    text-align: center;
+    margin-top: 40px;
+    position: absolute;
+    z-index: 12;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 93%, 0.4);
+    top: 0;
+    left: 0;
+}
+
+
+.spamfilter_container .dialog_content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.spamfilter_container .dialog_content>iframe {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* TWEET STYLES - NEED TO RESTYLE*/
+
+.spamfilter_container .module.profile-card.component.profile-header {
+    text-align: center;
+}
+.spamfilter_container .pretty-link.js-nav .screen-name {
+    color: blue;
+}
+.spamfilter_container ol.recent-tweets li {
+    padding: 15px 0 15px 1px;
+    background: hsl(0, 0%, 100%);
+    box-shadow: inset 0px 1px 1px hsl(0, 0%, 81%);
+    margin: 1px 0 7px 0; -moz-box-shadow: inset 0 1px 3px hsl(0, 6%, 47%); -webkit-box-shadow: inset 0 1px 3px hsl(0, 6%, 47%); box-shadow: inset 0 1px 3px hsl(0, 6%, 47%);  -moz-box-sizing: content-box; 
+    box-sizing: content-box; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; background-color: hsl(0, 0%, 99%); 
+    height: auto; 
+    overflow: hidden; display: block;  filter: alpha(opacity=0); 
+}
+.spamfilter_container .go-to-profile {
+    display: none;
+}
+.spamfilter_container .user-actions.btn-group {
+    display: none;
+}
+.spamfilter_container .expanded-content {
+    display: none;
+}
+.spamfilter_container .stream-item-header {
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+.spamfilter_container .dogear {
+    display: none;
+}
+.spamfilter_container .username.js-action-profile-name {
+    vertical-align: top;
+}
+.spamfilter_container .stream-item-footer {
+    display: none;
+}
+.spamfilter_container .time {
+    float: right;
+}
+
+.spamfilter_container .tweet .js-tweet-text {
+    white-space: pre-wrap;
+    line-height: 16px;
+}
+
+.spamfilter_container .avatar.js-action-profile-avatar {
+
+}
+
+.spamfilter_container .content {
+    margin-left: 58px;
+}
+
+.spamfilter_container .tweet .time {
+    position: relative;
+    float: right;
+    margin-top: 1px;
+    color: hsl(0, 0%, 73%);
+}
+
+.spamfilter_container .stream-item-header .avatar, .permalink-header .avatar {
+    float: left;
+    margin-top: 3px;
+    margin-left: -58px;
+}
+
+.spamfilter_container .fullname {
+    font-weight: bold;
+    color: hsl(0, 0%, 20%);
+}
+.spamfilter_container s {
+    text-decoration: none;
+}

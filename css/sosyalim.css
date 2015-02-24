@@ -1,0 +1,128 @@
+header > a{
+    background-image: url('../img/sosyalim_50.png');
+    width: 251px;  height: 60px;
+}
+
+#main {
+    width: -webkit-calc(100% - 140px);
+}
+
+header{
+    background-image: url('../img/artwork_sosyalim.png'), -webkit-linear-gradient(top, hsl(0, 0%, 99%), hsl(0, 0%, 95%));
+    background-color: hsl(0, 0%, 99%);
+}
+
+footer{
+    background-image: url('../img/artwork_bottom_sosyalim.png');  
+    background-color: hsla(0, 0%, 71%, 0.29);
+}
+
+#dashboard{
+    background-image: url('../img/logo_bg_colorful_sosyalim.png');  
+    left: 140px;
+    width: -webkit-calc(100% - 140px);
+}
+
+
+aside > ul li{
+    height: auto;
+    padding: 5px 0 5px 0;
+    background-color: hsl(0, 0%, 97%);
+    box-shadow: inset 0px 1px 2px hsl(0, 100%, 100%);
+}
+
+aside > ul li:hover {
+    background-color: hsl(0, 100%, 100%) !important;
+    color: #fff;
+}
+
+aside > ul li:nth-child(1) {
+    border-color: hsl(236, 51%, 37%);
+    background-color: hsl(236, 15%, 95%);
+}
+
+
+aside > ul li:nth-child(2) {
+    border-color: hsl(198, 76%, 52%);
+    background-color: hsl(198, 15%, 95%);
+}
+
+aside > ul li:nth-child(3) {
+    border-color: hsl(108, 65%, 47%);  
+    background-color: hsl(108, 15%, 95%);
+}
+
+aside > ul li:nth-child(4) {
+    border-color: hsl(55, 75%, 53%);  
+    background-color: hsl(55, 15%, 95%);
+}
+
+aside > ul li:nth-child(5) {
+    border-color: hsl(24, 96%, 49%);  
+    background-color: hsl(24, 15%, 95%);
+}
+
+aside > ul li:nth-child(6) {
+    border-color: hsl(2, 95%, 25%);   
+    background-color: hsl(2, 15%, 95%);
+}
+
+aside > ul li:nth-child(7) {
+    border-color: hsl(331, 71%, 52%); 
+    background-color: hsl(331, 15%, 95%);
+}  
+
+aside > ul li:nth-child(8) {
+    border-color: hsl(331, 71%, 52%);
+}
+
+aside > ul li:nth-child(9) {
+    border-color: hsl(331, 71%, 52%);
+}
+
+aside > ul li:nth-child(10) {
+    border-color: #666;
+}
+
+aside > ul li:nth-child(11) {
+    border-color: #444;
+}
+
+
+
+aside > ul li button {
+    display: block;
+    margin: auto;
+    height: 32px;
+    padding: 0;
+}
+aside > ul li span {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 5px 0 0 0;
+    height: auto;
+}
+aside {
+    width: 140px;
+    padding: 7px 5px 0 7px;
+    background-color: hsl(236, 40%, 98%);
+    box-shadow: inset -1px 0px 3px #fff;
+    background-image: url(../img/subtlenet2.png);
+}
+.ui-tabs .ui-tabs-nav {
+    margin: 0px 0 0 125px;
+}
+
+aside ul li.disabled {
+    background-image: -webkit-linear-gradient(hsl(0, 0%, 90%), hsl(0, 0%, 86%));
+}
+aside > ul li:active:hover, aside > ul li.selected {
+    background-image: -webkit-linear-gradient(top, hsl(0, 0%, 76%), hsl(0, 0%, 80%));
+}
+#user_name {
+    color: hsl(236, 51%, 37%);
+}
+#footer_info img {
+    margin-top: 1px;
+}

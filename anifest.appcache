@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# 2012-09-24:v1.1
+
+# Explicitly cached entries
+
+# offline.html will be displayed if the user is offline
+FALLBACK:
+#/ /offline.html
+
+# All other resources (e.g. sites) require the user to be online. 
+NETWORK:
+./modules.php
+
+# Additional resources to cache
+CACHE:

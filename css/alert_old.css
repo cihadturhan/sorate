@@ -1,0 +1,947 @@
+/* simple css */
+
+.alert_container{
+    width: 100%;
+    height: 100%;
+
+
+}
+.container_header{
+    width: 100%;
+    height: 30px;
+    color: #28AAE2;
+
+}
+
+
+
+
+
+.h1{
+    font-family: Verdana ;
+    font-size: 15px;
+    padding-left: 40px;
+    width: 300px;
+    display: inline-block;
+    /* color: #28aae2; */
+
+
+    color: hsl(0, 0%, 50%);
+}
+.h{
+    font-family: Verdana ;
+    font-size: 20px;
+   
+    color:#030303;
+    opacity: 0.70;
+    padding-left:  100px;
+    padding-bottom: 0px;
+    display: inline-block;
+    vertical-align: middle;
+
+
+}
+.h4{
+    font-size: 12px;
+
+}
+.h3 {
+
+    width: 124px;
+    margin: -8px auto 5px auto;
+    display: block;
+    height: 20px;
+    font-weight: bold;
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: 0 -2px 1px 1px hsl(0, 0%, 98%), 0 1px 3px hsla(0, 0%, 0%, 0.28);
+    text-align: center;
+}
+.h2{
+    font-family: Verdana ;
+    font-size: 17px;
+    font-weight: bold;
+    color:#000000;
+
+}
+/* sol  panel   */
+div.left_accordion_container{
+    /*border: 1px solid black;*/
+    height: 100%; 
+    width: 384px;  
+    padding: 10px;  
+    display: inline-block;
+     opacity: 1;  -webkit-transform: none;
+     
+}
+ .new_add_container{
+    width: 100%;
+   
+    position: relative;
+    margin: 0 0 10px 0;
+    
+    opacity: 1;  -webkit-transform: none;
+}
+.accordion{
+     width: 100%;
+    height: 640px;
+    position: relative;
+    margin: 0 0 10px 0;
+    
+    opacity: 1;  -webkit-transform: none;
+    
+    
+}
+.acordion[data-id="AllAlerts"]{
+    
+    background-image: -webkit-linear-gradient(hsla(108, 65%, 45%,0), hsl(108, 65%, 45%), hsla(108, 65%, 45%,0));
+}
+
+.new_add_container[data-id="AllAlerts"]{
+    
+    margin: 0px; 
+    width: 100%;
+    
+
+    height: -webkit-calc(100% - 650px);
+    float: left;
+  
+}
+
+
+
+.alert_list_popup_date{
+    text-align: right;
+}
+.alert_add_edit_container {
+    width: 100% !important;
+    height: auto;
+    top: 20px;
+    left: 0;
+    z-index: 4;
+    display: none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    padding-top: 10px;
+}
+.alert_list_popup {
+
+    opacity: 1;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -200px;
+    
+
+    width: 300px;
+ 
+   
+}
+td { 
+    border-bottom:1px solid #E0E0E0; 
+    border-right:1px solid #E0E0E0; 
+    background: #fff; 
+    padding: 6px; 
+    color: #474747; 
+    font:11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    margin: 10px 0 0 0 ;
+    width: 50px;
+  
+}
+th { 
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #474747; 
+    border-bottom:1px solid #E0E0E0; 
+    border-right:1px solid #E0E0E0; 
+    border-top:1px solid #E0E0E0; 
+    letter-spacing: 2px; 
+    text-align: left; 
+    padding: 6px; 
+     width: 50px;
+    
+} 
+.alert_list_popup .header{
+    
+    font-family: verdana;
+    font-size: 10pt;
+    color: #aaa;
+    text-align: right;
+}
+.table_still{
+    width: 100%;
+    border: 1px solid #E0E0E0;  
+    padding: 5px;
+}
+.font span {
+
+    vertical-align: middle;
+    text-align: right;
+    padding-top: 8px;
+    font-weight: bold;
+    font-size: 13px;
+    color: hsl(0, 0%, 41%);
+    text-shadow: 0 1px 0px hsla(0, 100%, 100%, 0.5);
+
+
+}
+
+.add_edit_container {
+
+    display: block
+}
+.button{
+    width: 100px;
+    height: 35px;
+    float: right;
+
+}
+.group_select {
+    display: inline-block;
+    position: relative;
+    vertical-align: bottom;
+    display: inline-block;
+    margin-left: 16px;
+}
+.group_list {
+    position: absolute;
+    z-index: 4;
+    background-image: -webkit-linear-gradient(top, white, whitesmoke);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(1, whitesmoke));
+    background-image: -moz-linear-gradient(top, white, whitesmoke);
+    background-image: -ms-linear-gradient(top, white, whitesmoke);
+    background-image: -o-linear-gradient(top, white, whitesmoke);
+    filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr=white, EndColorStr=whitesmoke)";
+    background-image: linear-gradient(top, white, whitesmoke);
+    width: 100%;
+    text-align: left;
+    padding-left: 6px;
+    padding-right: 6px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-shadow: 0 2px 3px #999;
+    -webkit-box-shadow: 0 2px 3px #999;
+    box-shadow: 0 2px 3px #999;
+    -webkit-border-bottom-left-radius: 3px;
+    -moz-border-radius-bottomleft: 3px;
+    border-bottom-left-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-bottom-right-radius: 3px;
+    display: none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -moz-transform: translatey(-30px);
+    -ms-transform: translatey(-30px);
+    -o-transform: translatey(-30px);
+    -webkit-transform: translatey(-30px);
+    transform: translatey(-30px);
+    -webkit-backface-visibility: hidden
+        ;
+    -webkit-transform-origin: 50% 0;
+}
+.group_list ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: Arial, Verdana;
+    font-size: 0.85em
+        ;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.group_list ul li {
+    padding: 5px 0 5px 0;
+    border-bottom: 1px solid hsl(0, 9%, 94%);
+    -moz-transition: color 1s;
+    -o-transition: color 1s;
+    -webkit-transition: color 1s;
+    transition: color 1s;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0
+        ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+.group_list ul li:hover {
+    background-color: white;
+    cursor: default;
+    color: #28AAE2;
+    -moz-transition: color 0s;
+    -o-transition: color 0s;
+    -webkit-transition: color 0s;
+    transition: color 0s
+        ;
+}
+.group_list ul li.drawn {
+    color: hsl(0, 0%, 75%);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.group_list ul li .icon-multiply {
+    position: absolute;
+    right: 1px;
+    top: 0;
+    font-weight: bold;
+    color: hsl(0, 0%, 0%);
+    display: none;
+    transition: opacity 0.2s;
+    cursor: pointer;
+    z-index: 3;
+    vertical-align: bottom;
+    padding-top: 7px;
+    font-size: 8px;
+}
+.button_size{
+    text-align: center;
+    margin: 10px 0 5px 0;
+
+    /* font-size: 6pt; */
+}
+.button_color{
+    color: #28AAE2;
+   
+
+}
+.options{
+    
+    display: none;
+    
+}
+.options h1 {
+font-size: 12px;
+width: 124px;
+margin: -8px auto 5px auto;
+display: block;
+height: 20px;
+background-color: hsl(0, 0%, 98%);
+box-shadow: 0 -2px 1px 1px hsl(0, 0%, 98%), 0 1px 3px hsla(0, 0%, 0%, 0.28);
+font-weight: bold;
+}
+.option_link{
+    font-weight: bold;
+    text-decoration: underline;
+}
+a:visited {
+    color: #000;
+    text-decoration: underline;
+}
+a:hover{
+    color:#28AAE2;
+}
+a:active {
+ color:#000;
+ text-decoration:none;
+ }
+.button_still{
+     font-family: verdana;
+     font-size: 14px;
+}
+.new_add_container span.header {
+    margin: 0px 0 5px 0;
+    padding-top: 10px;
+    clear: both;
+    display: block;
+    font-weight: bold;
+}
+
+.all_alerts_container{
+
+    margin: 0px; 
+    width: 100%;
+    
+
+    height: -webkit-calc(100% - 360px);
+    float: left;
+
+}
+.left_bottom_container{
+
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y:  scroll;
+}
+.all_alerts_pop_container{
+    position: relative;
+    display: inline-block;
+
+}
+.title_button{
+    display: inline-block;
+    padding: 10px;
+    margin-bottom: 10px;
+
+}
+.alert_image{
+    background-image: url('../img/calendar.png');
+    width: 420px;
+    height: 200px;
+    background-position: left;
+    background-repeat: no-repeat;
+
+}
+.alert_image_twitter{
+
+    background-image: url('../img/twitter.png');
+    width: 32px;
+    height: 32px;
+    background-position: left;
+    background-repeat: no-repeat;
+
+    display: inlie_block;
+    margin: 10px 10px 10px 10px ;
+
+}
+.alert_image_time{
+
+    background-image: url('../img/alarm2.png');
+    width: 32px;
+    height: 32px;
+    background-position: left;
+    background-repeat: no-repeat;
+
+    display: inlie_block;
+    margin: 10px 10px 10px 10px ;
+
+}
+.alert_image_alert{
+    background-image: url('../img/alarm.png');
+    width: 32px;
+    height: 32px;
+    background-position: left;
+    background-repeat: no-repeat;
+
+    display: inlie_block;
+    margin: 10px 10px 10px 10px ;
+
+}
+.right_edit_button{
+
+    position: relative;
+    vertical-align: top;
+    text-align: right;
+    margin-top: 3px;
+
+    Display: inline-block;
+    float: right;
+}
+.alert_container rect.bordered {
+    stroke: #E6E6E6;
+    stroke-width:2px;   
+}
+.alert_container   text.mono {
+    font-size: 10pt;
+    font-family: Consolas, courier;
+    fill: #aaa;
+}
+.alert_container   text.axis-workweek {
+    fill: #000;
+}
+.alert_container   text.axis-worktime {
+    fill: #000;
+}
+.all_alerts_pop_container .ext.axis-worktime {
+    fill: #000;
+}   
+.blueLine{
+    
+    height: 1px;   
+    width: 100%;
+    background-color: #43b5e5;
+    position: relative;
+    margin: 3px 0 3px 0 ;
+}
+
+
+
+/* sağ panel   */
+.rgt_container{
+
+    /*border: 1px solid black;*/
+    height:  100%;
+    
+
+    width: -webkit-calc( 100% - 388px);
+    padding: 10px;
+    display: inline-block ;
+
+    vertical-align: top;
+}
+.right_container{
+    width:  100%;
+    height: 100%;
+    position: relative;
+    margin: 0 0 0 0;
+
+
+
+}
+.rght_Bottom_container{
+    width: 100%;
+    height: 60%;
+    padding: 10px;
+    display: inline-block ;
+}
+.charts-container {
+    height: 40%;
+    width: 100%;
+    display: inline-block ;
+}
+.graph {
+    width: 100%;
+    height: 100%;
+ padding: 10px;
+}
+
+/*  Tweets Container için css */
+.tweets_container{
+
+    width: -webkit-calc( 50% - 20px);
+    height: 100%;
+    display: inline-block ;
+    position: relative;
+    vertical-align: top;
+
+}
+.tweet-timestamp {
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 11px;
+    color: hsl(0, 0%, 38%);
+    font-family: Helvatica, Arial, Tahoma
+}
+.tweet_summary.container {
+    height: 100%;
+}
+.general_tweet_container {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y:  scroll;
+}
+.tweets_container li div.content {
+    padding: 12px;
+}
+.js-tweet-text {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    color: hsl(0, 0%, 40%);
+    font-weight: normal;
+    font-family: Helvetica, Arial;
+    text-decoration: none;
+    text-align: left;
+    line-height: 16px;
+    display: block;
+    overflow: hidden;
+}
+.tweet_summary {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    padding-top: 0;
+
+}
+.new_tweets {
+    text-align: right;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 5px;
+    height: 30px;
+    display: none;
+    height: 30px;
+    overflow: hidden;
+    display: none !important;
+}
+.tweet_summary ul {
+    list-style: none;
+    text-align: left;
+    margin: 5px;
+    padding: 0 5px 0 5px;
+
+    max-height: calc(100% - 40px);
+    max-height: -moz-calc(100% - 55px);
+    max-height: -ms-calc(100% - 55px);
+    max-height: -o-calc(100% - 55px);
+    max-height: calc(100% - 40px);
+    text-align: center;
+    height: 100%;
+}
+.alert_container div.buttons {
+    width: 100%;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 20px;
+    margin-bottom: 15px;
+    display: none;
+}
+.alert_container div.icon-spinner {
+    -webkit-animation: rotateCW 1.2s infinite;
+    -moz-animation: rotateCW 1.2s infinite;
+    -ms-animation: rotateCW 1.2s infinite;
+    -o-animation: rotateCW 1.2s infinite;
+    animation: rotateCW 1.2s infinite;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    display: inline-block;
+    color: hsl(198, 76%, 52%);
+    display: none;
+    font-size: 16px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    padding-top: 0px;
+    text-align: center;
+    width: 16px;
+    margin: 0 auto 0 auto;
+}
+.alert_container button[name*=tweets] {
+    height: 30px;
+    width: 40px;
+    font-size: 1em;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+.alert_container button[name=show_tweets] {
+    width: auto;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    height: 30px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    position: relative;
+    font-size: 14px;
+    width: -webkit-calc(100% - 210px);
+}
+.alert_container button[name=show_tweets]:disabled{
+    color: black !important;
+    text-shadow: none;
+    cursor: default;
+}
+.alert_container .autoupdate {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+.alert_container .cb_container {
+    width: 30px;
+    height: 10px;
+    background: hsl(0, 0%, 93%);
+    margin: -1px;
+    margin-left: 10px;
+    /* margin-right: 10px; */
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    position: relative;
+    -webkit-box-shadow: inset 0px 1px 1px hsla(0, 0%, 0%, 0.5), 0px 1px 0px hsla(0, 100%, 100%, 0.2);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+    box-shadow: inset 0px 1px 1px hsla(0, 0%, 0%, 0.5), 0px 1px 0px hsla(0, 100%, 100%, 0.2);
+    display: inline-block;
+    margin-right: 10px;
+    /* background-image: -webkit-linear-gradient(left, hsl(127, 64%, 70%) 50%, hsl(0, 0%, 79%) 50%);*/
+}
+.alert_container input[type=checkbox] {
+    opacity: 0;
+    width: 100%;
+    height: 10px;
+    padding: 0;
+    top: 0;
+    margin: 0;
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+}
+.alert_container input[type=checkbox] + label {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    transition: left .4s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    box-shadow: 0px 1px 3px 0px hsla(0, 0%, 0%, 0.5);
+    background: hsl(76, 100%, 98%);
+    background: -webkit-linear-gradient(top, hsl(0, 100%, 100%) 0%,hsl(0, 0%, 91%) 100%);
+    pointer-events: none;
+    color: hsla(0, 0%, 0%, 0);
+    font-size: 29px;
+    line-height: 0px;
+    padding: 0;
+    font-weight: bold;
+    text-shadow: 0px -1px 2px hsla(0, 0%, 0%, 0.5), 0px 1px 2px hsla(0, 100%, 100%, 0.5);
+    text-align: center;
+    left: 0px;
+    text-shadow: none;
+    color: hsl(0, 100%, 74%);
+}
+.alert_container input[type=checkbox]:checked + label {
+    left: -webkit-calc(100% - 13px);
+    left: -moz-calc(100% - 13px);
+    color: hsl(127, 63%, 47%) !important;
+    text-align: center;
+    padding: 0;
+    left: -webkit-calc(100% - 16px);
+}
+.alert_container .w4 .general_tweet_container ul li{
+    margin-right: 10px;
+    width: -webkit-calc(50% - 20px);
+}
+.alert_container .general_tweet_container ul li {
+    margin: 1px 0 7px 0;
+    -moz-box-shadow: inset 0 1px 3px hsl(0, 6%, 47%);
+    -webkit-box-shadow: inset 0 1px 3px hsl(0, 6%, 47%);
+    box-shadow: inset 0 1px 3px hsl(0, 6%, 47%);
+    padding: 1px 0 0 0;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: hsl(0, 0%, 99%);
+    min-height: 80px;
+    overflow: hidden;
+
+    display: inline-block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    width: 100%;
+    vertical-align: middle;
+}
+.alert_container .general_tweet_container ul li.even {
+    background-color: hsl(192, 20%, 97%);
+}
+.alert_container li div.content {
+    padding: 12px
+}
+.alert_container .avatar {
+    display: inline;
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin: 2px 12px 0 0;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid hsl(0, 0%, 60%);
+    -moz-box-shadow: 0 1px 2px hsl(0, 5%, 84%);
+    -webkit-box-shadow: 0 1px 2px hsl(0, 5%, 84%);
+    box-shadow: 0 1px 2px hsl(0, 5%, 84%)
+        ;
+}
+.alert_container .tweet_time {
+    text-align: right;
+    display: block
+}
+.alert_container .fullname {
+    float: left;
+    margin-top: 0;
+    color: hsl(0, 0%, 33%);
+    font-weight: normal;
+    font-family: Arial, Tahoma, Verdana;
+    font-size: 12px;
+    display: none;
+}
+.alert_container .js-tweet-text {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    color: hsl(0, 0%, 40%);
+    font-weight: normal;
+    font-family: Helvetica, Arial;
+    text-decoration: none;
+    text-align: left;
+    line-height: 16px;
+    display: block;
+    overflow: hidden;
+}
+.alert_container .emphasized {
+    font-weight: bold;
+    color: hsl(0, 40%, 42%);
+    text-shadow: 0 0 1px hsl(0, 0%, 83%)
+}
+.alert_container .username {
+    float: left;
+    margin-right: 10px;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Arial, Tahoma;}
+.alert_container .tweet-timestamp {
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 11px;
+    color: hsl(0, 0%, 38%);
+    font-family: Helvatica, Arial, Tahoma
+}
+.alert_container .permalink-link {
+    color: #333;
+    text-decoration: none;
+    display: none
+}
+.alert_container .metadata > span {
+    margin-right: 5px;
+    display: block;
+    font-family: Helvetica, Arial;
+    font-size: 0.75em
+}
+.alert_container .tweet-counter {
+    font-weight: bold;
+    float: left
+}
+.alert_container .time_and_date {
+    text-align: right;
+    display: block
+}
+.txt_container{
+    border: 1px solid transparent;
+    border-radius: 4px;  box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.28);  background-color: hsla(0, 0%, 0%, 0.01);
+    width: -webkit-calc( 50% - 0px);
+    height: 100%;
+    display: inline-block ;
+    vertical-align: top;
+    position: relative;
+    padding:  40px;
+}
+.alertname {
+    padding: 50px; 
+    width:  -webkit-calc( 100% - 20px);
+    height: -webkit-calc( 100% - 73px);
+    display: inline-block;
+    border: 0px double hsl(0, 0%, 89%);
+    background: white;
+    border-color: #d672ad;
+    border-radius: 3px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin:  30px 10px 30px 10px;
+    
+}
+/* border: 1px solid black;*/
+.alertname h1 {
+text-align: center;
+font-size: 15px;
+font-family: Verdana;
+margin: 7px;
+position: relative;
+height: 25px;
+padding-top: 7px;
+color: hsl(0, 0%, 50%);
+text-align: left;
+padding-left: 70px;
+}
+ .alertname h2 {
+text-align: center;
+font-size: 25px;
+font-family: Verdana;
+margin: 10px 10px 20px 10px;
+}
+.txt_container .totaltweets{
+
+    width: 100%;
+    /* border: 1px solid black;*/
+    height: -webkit-calc( 50% - 40px);
+    padding:  30px;
+
+}
+.threshold_container {
+    display: table-cell;
+    /* vertical-align: middle; */
+    line-height: 25px;
+    /* margin-left: 69px; */
+}
+.settings_threshold {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    display: inline-block;
+
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    margin: 10px 0 10px 0;
+}  
+.settings_interval {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    display: inline-block;
+
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    margin: 10px 0 10px 0;
+}   
+.threshold_select_container {
+    display: inline-block;
+    text-align: center;
+
+}  
+.threshold_select_container button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.interval_select_container {
+    display: inline-block;
+    text-align: center;
+
+}  
+.interval_select_container button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.threshold_select {
+    border-radius: 2;
+    margin: 0px;
+    width: 100px;
+    font-size: 12pt;
+}
+.threshold_text{
+    display: none;
+
+}
+.title {
+    border: 1px solid transparent;
+    margin: 25px 0 15px 0;
+    min-height: 30px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px hsla(0, 0%, 0%, 0.28);
+    background-color: hsla(0, 0%, 0%, 0.01);
+    padding: 10px 0 10px 0;
+}
+.alert_list_popup:hover:after {
+    opacity: 1;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -200px;
+
+}
+.interval_select {
+    border-radius: 2;
+    margin: 0px;
+    height: 50px;
+    vertical-align: top;
+    width: 100px;
+    font-size: 12pt;
+}
+.mail_sms_container{
+    height: auto;
+   
+
+    width: -webkit-calc( 100% - 20px);
+}
+.title_bar{
+  
+   
+}

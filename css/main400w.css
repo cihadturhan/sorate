@@ -1,0 +1,53 @@
+aside { 
+    position: absolute;
+    z-index: -1;
+}
+
+.ui-tabs .ui-tabs-nav {
+padding: 0px 0 0 72px;
+}
+
+#main_wrapper {
+    margin-top: 58px;
+    height: calc(100% - 78px);
+}
+#hello_text {
+    display: none;
+}
+#login_box {
+    width: 100px;
+}
+header {
+    height: 95px;
+}
+.general_container .settings_container {
+    display: block;
+}
+.general_container button[name="add_kw"], .general_container  div.add_edit_container, .general_container  div.settings_container {
+    display: inline-block !important;
+    margin: auto;
+    float: none !important;
+}
+.general_container .selection_container {
+    height: 50px;
+    text-align: center;
+}
+.general_container  .group_select {
+    clear: both;
+    display: block !important;
+    margin-bottom: 7px;
+}
+.general_container input[name="keyword"] {
+    width: 100% !important;
+}
+
+.general_container .top_container {
+    height: auto !important;
+}
+
+
+
+
+button[name=show_aside] {
+    display: block;
+}

@@ -1,0 +1,79 @@
+aside{
+    width: 70px;
+}
+aside > ul li span{
+    display: none;
+}
+
+.ui-tabs .ui-tabs-nav {
+    padding: 0px 0 0 135px;
+}
+
+
+#main{
+    width: -webkit-calc(100% - 70px);
+}
+/* INSTANT.CSS OVERRIDE */
+
+.general_container .tweet_section {
+    min-width: 250px !important;
+}
+
+/* INSTANT.CSS OVERRIDE */
+.general_container > div.top_container{
+    width: 50% !important;
+}
+
+.general_container .tweet_section{
+    width: -webkit-calc(46%) !important;
+}
+
+
+.report.container .info-container{
+    position:absolute !important;
+    height: -webkit-calc(100% - 45px);
+    height: -moz-calc(100% - 45px);
+    height: -ms-calc(100% - 45px);
+    height: -o-calc(100% - 45px);
+    height: calc(100% - 45px);
+}
+
+.report.container .info-container:before {
+    border: 1px solid hsl(0, 100%, 50%);
+    content: "i";
+    left: -40px;
+    width: 40px;  height: 40px;  
+    display: inline-block;  border: 1px solid hsl(0, 0%, 90%);  border-radius: 0px 0px 0px 22px;  position: absolute;  
+    z-index: 0;  
+    background: hsl(0, 0%, 97%);        
+    padding: 10px 0 0 18px;  color: hsl(0, 0%, 71%);  text-shadow: 0px 0px 3px hsl(0, 100%, 100%);  
+    font-size: 20px;  
+    font-weight: bold;  right: 0px;  top: 0px;  -webkit-transition: color 0.3s linear;
+    box-sizing: border-box;
+}
+.report.container .graph-container{
+    width: 100% !important;
+}
+
+
+.report.container .info-container:focus, .info-container:hover, .info-container:active{
+    left: auto;
+    right: 0;
+}
+
+.report.container .maniplation{
+    display: none !important;
+}
+
+#dashboard{
+    left: 70px;
+    width: -webkit-calc(100% - 70px);
+}
+
+*{
+    transition: none !important;
+    -webkit-transition: none !important;
+    -o-transition: none !important;
+    -ms-transition: none !important;
+    -moz-transition: none !important;
+}

@@ -1,0 +1,223 @@
+
+root { 
+    display: block;
+}
+
+body{
+    overflow:hidden;
+    width:100%;
+    height:100%;
+}
+
+#header {
+    width: 100%;
+    background-color:rgb(240, 240, 240);
+    min-height: 100px;
+    display: block;
+    -moz-box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.27);
+    -webkit-box-shadow: inset 0 2px 3px hsla(0, 100%, 100%, 0.27);
+    box-shadow: inset 0 2px 3px hsla(0, 100%, 100%, 0.27);
+    background-image: -webkit-linear-gradient(top, hsl(0, 0%, 98%), hsl(0, 0%, 90%));
+    padding: 5px 5px 0 5px;
+    text-align: center;
+    background-image: url('../img/artwork.png');
+    background-position: top right;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid hsl(0, 0%, 85%);
+    position: absolute;
+    line-height: 1;
+    z-index: 1000;
+}
+
+#header > a {
+    width: 200px;
+    height: 50px;
+    display: block;
+    color: hsl(0, 0%, 98%);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial;
+    text-shadow: 0 1px 4px hsl(0, 0%, 0%);
+    padding: 2px;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 0px;
+    float: left;
+    background-image: url('../img/sorate_50.png');
+    position: absolute;
+    background-repeat:no-repeat;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+#main{
+    margin: auto;
+    text-align: center;
+    overflow: auto;
+    padding: 10px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0) no-repeat center bottom;
+    background-image: url('../img/fake_bg.png');
+    background-position: center center;
+    background-size: 100% 100%;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+}
+
+#old-ie-warning {
+    width: 100%;
+    height: 60px;
+    padding-top: 8px;
+    font-size: 22px;
+    font-family: Arial;
+    color: red;
+    line-height: 30px;
+}
+
+#footer {
+    width: 100%;
+    height: 35px;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(240, 240, 240);
+    background-color: hsla(0, 0%, 95%, 0.29);
+    padding: 6px;
+    padding-top: 8px;
+    z-index: 3;
+    color: hsla(0, 0%, 12%, 0.88);
+    font-family: HelveticaNeue, Helvetica, Arial;
+    font-size: 15px;
+    -webkit-box-shadow: 0px -1px 1px hsla(0, 0%, 0%, 0.44);
+    box-shadow: 0px -1px 1px hsla(0, 0%, 0%, 0.44);
+    text-shadow: 0px 1px 1px hsl(0, 100%, 100%);
+    background-image: url('../img/artwork_bottom.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+#copyright a {
+    float: right;
+    margin-right: 15px;
+}
+
+#copyright strong {
+    float: right;
+    font-weight: bold;
+    margin-right: 6px;
+    margin-top: 3px;
+}
+
+#footer_info {
+    float: right;
+    margin-right: 7px;
+    margin-top: 2px;
+}
+
+
+#footer_info img {
+    height: 16px;
+    margin-top: -2px;
+}
+
+#report_box {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border-radius: 3px;
+    z-index: 999;
+    text-align: center;
+    display: table;
+}
+
+
+#report_box>a{
+    z-index: 999;
+    -webkit-box-shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.74);
+    background-color: hsla(0, 0%, 84%, 0.34);
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+    font-family: Helvetica, Arial, Verdana;
+    position: relative;
+    text-align: center;
+}
+
+
+.lt-ie10 #main{
+    height:99%;
+    width:99%;
+}
+.lt-ie9 #report_box>a{
+    display: block;
+    top:45%;
+    left: 40%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.lt-ie9 #report_box a span#before{
+    background-color: #EEEEEE;
+}
+
+.lt-ie9 #report_box a span#info{
+    background-color: #EEEEEE;
+}
+
+.lt-ie8 #report_box a span#before{
+     height: 90px;
+}
+
+.lt-ie8 #report_box a span#info{
+    height: 70px;
+}
+
+
+
+#report_box a span#info {
+    font-size: 18px;
+    z-index: 999;
+    -webkit-box-shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.74);
+    box-shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.74);
+    padding-top: 40px;
+    background-color: hsla(0, 100%, 100%, 0.82);
+    border-radius: 5px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    height: 100px;
+    color: hsl(0, 0%, 19%);
+    text-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.24);
+    position: relative;
+    vertical-align: top;
+}
+
+
+#report_box a span#before {
+    width: 100px;
+    height: 100px;
+    background-color: hsla(0, 100%, 100%, 0.82);
+    -webkit-box-shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.74);
+    box-shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.74);
+    color: hsl(339, 74%, 63%);
+    text-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.53);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px;
+}
+
+#download_link{
+    text-decoration: none;
+    color:hsl(0, 0%, 19%);
+}

@@ -1,0 +1,84 @@
+header > a{
+    background-image: url('../img/sorate_50.png');
+    width: 200px;  
+    height: 50px;
+}
+
+
+header{
+    background-image: url('../img/artwork_sorate.png');
+}
+
+footer{
+    background-image: url('../img/artwork_bottom_sorate.png');  
+}
+
+#dashboard{
+    background-image: url('../img/logo_bg_colorful_sorate.png');  
+}
+
+aside {
+    background-color: hsl(0, 0%, 90%);
+    padding: 3px 0 0 3px;
+    width: 160px;
+}
+
+aside > ul li {
+    border-left: 5px solid hsl(0, 0%, 0%);
+}
+
+aside > ul li:nth-child(1){
+    border-left-color: hsl(331, 71%, 52%);   
+}
+
+aside > ul li:nth-child(2){
+    border-left-color: #2F3690;   
+}
+
+aside > ul li:nth-child(3){
+    border-left-color: #28AAE2;   
+}
+
+aside > ul li:nth-child(4){
+    border-left-color: hsl(108, 65%, 47%);   
+}
+
+aside > ul li:nth-child(5){
+    border-left-color: hsl(60, 85%, 47%);   
+}
+
+aside > ul li:nth-child(6){
+    border-left-color: hsl(24, 96%, 49%);   
+}
+
+aside > ul li:nth-child(7){
+    border-left-color: #7F0703;   
+}
+
+aside > ul li:nth-child(8){
+    border-left-color: #BC00C4;   
+}
+
+.ui-tabs .ui-tabs-nav{
+    margin-left: 60px;
+}
+
+aside ul li.disabled {
+    background-image: -moz-linear-gradient(hsl(0, 0%, 87%), hsl(0, 0%, 85%));  background-image: -o-linear-gradient(hsl(0, 0%, 87%), hsl(0, 0%, 85%));  background-image: -webkit-linear-gradient(hsl(0, 0%, 87%), hsl(0, 0%, 85%));  background-image: -webkit-linear-gradient(hsl(0, 0%, 87%), hsl(0, 0%, 85%));
+}
+aside > ul li:active:hover, aside > ul li.selected {
+    background-image: -webkit-linear-gradient(top, hsl(0, 0%, 82%), hsl(0, 0%, 87%));
+    background-image: -moz-linear-gradient(top, hsl(0, 0%, 82%), hsl(0, 0%, 87%));  background-image: -ms-linear-gradient(top, hsl(0, 0%, 82%), hsl(0, 0%, 87%));  background-image: -o-linear-gradient(top, hsl(0, 0%, 82%), hsl(0, 0%, 87%));  background-image: linear-gradient(top, hsl(0, 0%, 82%), hsl(0, 0%, 87%));
+}
+
+#user_name {
+    color: hsl(198, 76%, 52%);
+}
+#footer_info img {
+    margin-top: -2px;
+}
+
+
+#main {
+    width: -webkit-calc(100% - 160px);
+}

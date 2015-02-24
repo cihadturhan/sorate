@@ -1,0 +1,63 @@
+#main_wrapper{
+    margin-top: 33px;
+}
+
+aside{
+   margin-top: 37px;
+}
+
+
+#feedback{
+    display: none;
+}
+
+/* TABS */
+.ui-tabs .ui-tabs-nav li a img {
+    width: 16px;
+}
+
+.ui-tabs .ui-tabs-nav li a span{
+    display: none;
+}
+
+.ui-tabs .ui-tabs-nav li:not(.ui-tabs-active) a{
+    width: 20px;
+}
+
+.ui-corner-top.ui-state-active.ui-tabs-active{
+    width: 50px;
+}
+
+.ui-tabs .ui-tabs-nav li a{
+    height: 30px;
+    width: 30px;
+}
+
+.ui-tabs .ui-tabs-nav{
+    min-height: 30px;
+}
+
+
+.ui-tabs .ui-tabs-nav li a{
+    height: 30px;
+    width: 30px;
+}
+
+.ui-tabs .ui-tabs-nav{
+    min-height: 30px;
+    
+}
+
+
+
+
+/* INSTANT.CSS OVERRIDE */
+.general_container .settings_popup span{
+    display: none !important;
+}
+
+/* DETAIL.CSS OVERRIDE */
+
+.detail_container .detail_settings {
+    width: 150px;
+}

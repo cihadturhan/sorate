@@ -1,0 +1,6 @@
+lib/general_functions.php : 
+    addHostName
+        localhost -> so-rate.com
+
+lib/general_configuration.php
+    error_reporting(E_ALL) -> error_reporting(0);

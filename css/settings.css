@@ -1,0 +1,97 @@
+#main_left_container {
+    min-width: 170px;
+    max-width: 400px;
+    overflow-y: scroll;
+    float: left;
+    background: -webkit-linear-gradient(top, hsl(0, 0%, 93%) 10%, hsl(0, 0%, 94%) 80%) !important;
+    background: -moz-linear-gradient(top, hsl(0, 0%, 93%) 10%, hsl(0, 0%, 94%) 80%) !important;
+    background: -ms-linear-gradient(top, hsl(0, 0%, 93%) 10%, hsl(0, 0%, 94%) 80%) !important;
+    box-shadow: inset 0px 2px 3px 1px hsl(0, 0%, 79%), inset 0px 1px 1px 1px hsl(0, 0%, 80%) !important;
+    -webkit-box-shadow: inset 0px 2px 3px 1px hsl(0, 0%, 79%), inset 0px 1px 1px 1px hsl(0, 0%, 80%) !important;
+    -moz-box-shadow: inset 0px 2px 3px 1px hsl(0, 0%, 79%), inset 0px 1px 1px 1px hsl(0, 0%, 80%) !important;
+    -ms-box-shadow: inset 0px 2px 3px 1px hsl(0, 0%, 79%), inset 0px 1px 1px 1px hsl(0, 0%, 80%) !important;
+    border: 1px solid hsl(0, 0%, 99%) !important;
+    margin: 0px 10px 0px 0px;
+    position: relative;
+    height: 886px;
+    height: calc(100% - 83px);
+    height: -webkit-calc(100% - 83px);
+    height: -moz-calc(100% - 83px);
+    height: -ms-calc(100% - 83px);
+}
+
+
+#hor-zebra {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 20px;
+    text-align: left;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+.name_table {
+    width: 85%;
+    margin: 10px auto;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#hor-zebra tr{
+     -webkit-transition: background-color 0.1s;
+     background-color: hsl(0, 0%, 96%);
+}
+
+#hor-zebra tr:nth-child(odd) {
+    background-color: hsl(0, 0%, 91%);
+}
+
+#hor-zebra tr:nth-child(1){
+    background-color: white !important;
+}
+
+#hor-zebra th:first-child {
+    color: hsl(331, 71%, 52%);
+    border-right: 1px solid hsl(0, 100%, 100%);
+}
+
+#hor-zebra th {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 10px 8px;
+    color: hsl(0, 0%, 44%);
+    text-shadow: 0 0 1px hsl(0, 100%, 100%);
+    font-weight: bold;
+}
+
+#hor-zebra td {
+    padding: 10px;
+    color: hsl(0, 0%, 29%);
+    text-shadow: 0 0 2px hsl(0, 100%, 100%);
+    font-size: 13px;
+}
+
+#hor-zebra td:first-child {
+    font-weight: bold;
+    color: hsl(331, 71%, 52%);
+    border-right: 1px solid hsl(0, 100%, 100%);
+}
+
+#hor-zebra tr:hover{
+    background-color: hsl(0, 0%, 100%) !important; 
+    -webkit-transition: background-color 0s ease-in-out;
+}
+
+
+.settings_container {
+    width: 100%;
+    height: 100%;
+}
+
+#clicked_obj {
+background-color: hsl(197, 90%, 69%) !important;
+}

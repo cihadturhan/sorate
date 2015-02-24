@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr-TR"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <script src="js/jquery-1.9.0/jquery.min.js"></script>
+        <script src="js/helper.js"></script>
+        <script src="js/d3/d3.js"></script>
+        <script src="js/d3/plugins/d3.layout.cloud.js"></script>
+        <script>
+            tags = [{"key": "YeniBirDünya", "value": "590452"}, {"key": "TürkçeOlimpiyatları", "value": "131318"}, {"key": "EvrenselBarış", "value": "74517"}, {"key": "nazar", "value": "61070"}, {"key": "naatgecesi", "value": "48737"}, {"key": "hooooop", "value": "47318"}, {"key": "sağduyu", "value": "30682"}, {"key": "doksanlar", "value": "30388"}, {"key": "GelinTanışOlalım", "value": "28858"}, {"key": "DERS", "value": "25106"}, {"key": "sağduyu", "value": "18620"}, {"key": "MelihGökçekeSorun", "value": "17429"}, {"key": "survivorfinal", "value": "16976"}, {"key": "hayalimdekitatil", "value": "13717"}, {"key": "istersen", "value": "13453"}, {"key": "çayerdalbakkaldaiçilir", "value": "10320"}, {"key": "TahtEldenGidiyor", "value": "10030"}, {"key": "oyunbitti", "value": "9894"}, {"key": "üçartıbir", "value": "9502"}, {"key": "sağduyu", "value": "9437"}, {"key": "üçartıbir", "value": "9153"}, {"key": "sağduyu", "value": "8682"}, {"key": "benokuldayken", "value": "5429"}, {"key": "sonarzum", "value": "5120"}, {"key": "benimhalaumudumvar", "value": "5027"}, {"key": "yakışır", "value": "4953"}, {"key": "karadayı", "value": "4902"}, {"key": "sağduyu", "value": "4421"}, {"key": "son20dakika", "value": "3940"}, {"key": "guzelcirkin", "value": "3066"}, {"key": "NikahMasası", "value": "3023"}, {"key": "benimkararım", "value": "3000"}, {"key": "leylailemecnun", "value": "2891"}, {"key": "sinsiplan", "value": "2554"}, {"key": "beniböylesev", "value": "2483"}, {"key": "3artı1", "value": "2359"}, {"key": "32", "value": "2107"}, {"key": "KalbiminSahibi", "value": "1910"}, {"key": "seksenler", "value": "1667"}, {"key": "aşkiçin", "value": "1329"}, {"key": "seksenler", "value": "1268"}, {"key": "GeziSonrası", "value": "1167"}, {"key": "3artı1", "value": "1151"}, {"key": "seksenler", "value": "1143"}, {"key": "ucartıbir", "value": "1058"}, {"key": "uzlaşı", "value": "976"}, {"key": "kardeşlikzamanı", "value": "942"}, {"key": "evlenirkenmutlaka", "value": "880"}, {"key": "sosyalmedya", "value": "861"}, {"key": "gerçeğinpeşinde", "value": "851"}, {"key": "arkasokaklar", "value": "798"}, {"key": "hasrettürküleri", "value": "745"}, {"key": "ÖtekiGündem", "value": "710"}, {"key": "siznedersiniz", "value": "693"}, {"key": "tatarramazan", "value": "691"}, {"key": "yerindeolsam", "value": "691"}, {"key": "tatarramazan", "value": "667"}, {"key": "tatarramazan", "value": "639"}, {"key": "DavutoğlunaSorun", "value": "556"}, {"key": "ÖtekiGündem", "value": "503"}, {"key": "şiddetekarşı", "value": "500"}, {"key": "herşeyyolundamerkez", "value": "449"}, {"key": "benimiçinüzülme", "value": "383"}, {"key": "buhafta", "value": "359"}, {"key": "BöyleBitmesin", "value": "352"}, {"key": "gıcıkolduklarımız", "value": "348"}, {"key": "pisyedili", "value": "338"}, {"key": "BizOsmanlıTokadıyız", "value": "319"}, {"key": "SakaryaFırat", "value": "314"}, {"key": "uefanınkararı", "value": "309"}, {"key": "sanskapıda", "value": "290"}, {"key": "kardeslikzamani", "value": "276"}, {"key": "kardeşlikzamani", "value": "276"}, {"key": "kardeşlikzamani", "value": "276"}, {"key": "kardeslikzamani", "value": "276"}, {"key": "kardeslikzamani", "value": "276"}, {"key": "ZenginKızFakirOğlan", "value": "275"}, {"key": "sanskapida", "value": "230"}, {"key": "yakıştık", "value": "229"}, {"key": "butatilde", "value": "225"}, {"key": "neolacak", "value": "215"}, {"key": "tatildemek", "value": "208"}, {"key": "OsmanlıTokadınıEnÇok", "value": "188"}, {"key": "kardeşlikzamanı", "value": "182"}, {"key": "kardeslikzamani", "value": "182"}, {"key": "kardeşlikzamanı", "value": "182"}, {"key": "galipdervis", "value": "177"}, {"key": "galipdervis", "value": "177"}, {"key": "delirmemekiçin", "value": "163"}, {"key": "ZenginKızFakirOğlan", "value": "140"}, {"key": "ÜniversiteMedya", "value": "131"}, {"key": "ÜniversiteMedya", "value": "130"}, {"key": "AnneOlmak", "value": "121"}, {"key": "yazsıcağı", "value": "117"}, {"key": "ÜniversiteMedya", "value": "115"}, {"key": "birfikrinmivar", "value": "106"}, {"key": "KarneHediyesi", "value": "101"}, {"key": "sanskapida", "value": "94"}, {"key": "ÜniversiteMedya", "value": "87"}, {"key": "ÜniversiteMedya", "value": "84"}, {"key": "ailemiçin", "value": "83"}, {"key": "sanskapıda", "value": "77"}, {"key": "ÜniversiteMedya", "value": "60"}, {"key": "salihkuşu", "value": "60"}, {"key": "sanskapida", "value": "59"}, {"key": "diyolog", "value": "57"}, {"key": "YolAyrımı", "value": "54"}, {"key": "salihkuşu", "value": "47"}, {"key": "Gürbüzüyedirtmeyiz", "value": "37"}, {"key": "YaEvdeYoksan", "value": "31"}, {"key": "cemalnursargutasorun", "value": "31"}, {"key": "yabanciceği", "value": "25"}, {"key": "yabanciceği", "value": "25"}, {"key": "nerdeoeski", "value": "22"}, {"key": "aramizdaengelyok", "value": "18"}, {"key": "yabançiçeği", "value": "16"}, {"key": "yabançiçeği", "value": "16"}, {"key": "aramizdaengelyok", "value": "15"}, {"key": "yakıstık", "value": "14"}, {"key": "mutfagım", "value": "14"}, {"key": "YolAyrımı", "value": "14"}, {"key": "YolAyrımı", "value": "13"}, {"key": "YolAyrımı", "value": "11"}, {"key": "gcseffafoda", "value": "11"}, {"key": "bencenostalji", "value": "11"}, {"key": "haydispora", "value": "9"}, {"key": "ZamanımOlsa", "value": "9"}, {"key": "aslindagüzellik", "value": "8"}, {"key": "bodrumdancanli", "value": "7"}, {"key": "zamanımolsa", "value": "7"}, {"key": "MagnumPink", "value": "7"}, {"key": "zamanımolsa", "value": "7"}, {"key": "mutluyasamak", "value": "6"}, {"key": "mutluyasamak", "value": "6"}, {"key": "ZamanımOlsa", "value": "6"}, {"key": "bencenostalji", "value": "6"}, {"key": "mutluyasamak", "value": "5"}, {"key": "sonkuzyguneyaksami", "value": "5"}, {"key": "bencenostalji", "value": "5"}, {"key": "isteyinsöyliyelim", "value": "5"}, {"key": "mutluyasamak", "value": "5"}, {"key": "bodrumdancanli", "value": "4"}, {"key": "banaherşeyyakişir", "value": "4"}, {"key": "MagnumPink", "value": "4"}, {"key": "birfikrinmivar", "value": "4"}, {"key": "bodrumdancanli", "value": "3"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyaşamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "TadiDamagimda", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "mutluyasamak", "value": "2"}, {"key": "MagnumPink", "value": "1"}, {"key": "MagnumPink", "value": "1"}, {"key": "MagnumPink", "value": "1"}, {"key": "bodrumdancanli", "value": "1"}, {"key": "32gun", "value": "1"}, {"key": "hergünyenibirsen", "value": "0"}, {"key": "sadeceerkekleriçin", "value": "0"}, {"key": "MagnumPink", "value": "0"}, {"key": "sadeceerkeklericin", "value": "0"}, {"key": "sadeceerkeklericin", "value": "0"}, {"key": "MagnumPink", "value": "0"}, {"key": "malıniyisi", "value": "0"}, {"key": "sadeceerkeklericin", "value": "0"}, {"key": "herguneyenibirsen", "value": "0"}, {"key": "ÜniversiteMadya", "value": "0"}, {"key": "sadeceerkeklericin", "value": "0"}, {"key": "asksenindeetrafinisarsin", "value": "0"}, {"key": "kardeşikzamanı", "value": "0"}, {"key": "asksenindeetrafinisarsın", "value": "0"}, {"key": "taksicimuhabbeti", "value": "0"}, {"key": "ÜniversiteMedya", "value": "0"}];
+            var max = tags[0].value;
+            var min = tags[tags.length - 1].value;
+            w = 1024;
+            h = 768;
+            font = "Impact";
+            spiral = "archimedean";//"archimedean"; //rectangular
+            scale = 'sqrt';//'log';//sqrt linear
+            container = $("body")[0];
+
+            var svg = d3.select(container).append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+
+            var background = svg.append("g"),
+                    vis = svg.append("g")
+                    .attr("transform", "translate(" + [w >> 1, h >> 1] + ")");
+
+            var layout = d3.layout.cloud()
+                    .timeInterval(10)
+                    .size([w, h])
+                    .fontSize(function(d) {
+                return fontSize(+d.value);
+            })
+                    .text(function(d) {
+                return d.key;
+            })
+                    .rotate(0).on("end", draw);
+
+
+            function generate() {
+                layout
+                        .font(font)
+                        .spiral(spiral);
+
+                fontSize = d3.scale[scale]().range([13, 100]);
+                if (tags.length)
+                    fontSize.domain([+tags[tags.length - 1].value || 1, +tags[0].value]);
+                complete = 0;
+                words = [];
+                layout.stop().words(tags.slice(0)).start();
+            }
+
+            function draw(data, bounds) {
+                scale = bounds ? Math.min(
+                        w / Math.abs(bounds[1].x - w / 2),
+                        w / Math.abs(bounds[0].x - w / 2),
+                        h / Math.abs(bounds[1].y - h / 2),
+                        h / Math.abs(bounds[0].y - h / 2)) / 2 : 1;
+                words = data;
+                var text = vis.selectAll("text")
+                        .data(words, function(d) {
+                    return d.text.toLowerCase();
+                });
+                text.transition()
+                        .duration(1000)
+                        .attr("transform", function(d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                        .style("font-size", function(d) {
+                    return d.size + "px";
+                });
+                text.enter().append("text")
+                        .attr("text-anchor", "middle")
+                        .attr("transform", function(d) {
+                    return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                })
+                        .style("font-size", function(d) {
+                    return d.size + "px";
+                })
+                        .style("opacity", 1e-6)
+                        .transition()
+                        .duration(1000)
+                        .style("opacity", 1);
+                text.style("font-family", function(d) {
+                    return d.font;
+                })
+                        .style("fill", function(d) {
+                    return pct2rgb(min * 2, max, d.value)
+                }) /*function(d) { return fill(d.text.toLowerCase()); }*/
+                        .text(function(d) {
+                    return d.text;
+                });
+                var exitGroup = background.append("g")
+                        .attr("transform", vis.attr("transform"));
+                var exitGroupNode = exitGroup.node();
+                text.exit().each(function() {
+                    exitGroupNode.appendChild(this);
+                });
+                exitGroup.transition()
+                        .duration(1000)
+                        .style("opacity", 1e-6)
+                        .remove();
+                vis.transition()
+                        .delay(1000)
+                        .duration(750)
+                        .attr("transform", "translate(" + [w >> 1, h >> 1] + ")scale(" + scale + ")");
+            }
+
+            generate();
+
+        </script>

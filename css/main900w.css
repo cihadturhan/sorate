@@ -1,0 +1,21 @@
+
+#footer_info{
+    display: none;
+}
+
+/* INSTANT.CSS OVERRIDE */
+.general_container > div.top_container{
+    width: 100% !important;
+}
+
+.general_container > div.tweet_section{
+    width: 100% !important;
+    margin: auto;
+    max-width: 500px;
+    float: none;
+}
+
+.general_container .fullname{
+    display: none;
+}
+

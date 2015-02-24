@@ -1,0 +1,76 @@
+.evaluate_container{
+    text-align: center;
+
+}
+
+.evaluate_container .tweet_container{
+    display: inline-block;
+    position: static;
+    vertical-align: top;
+    padding: 0 0px 5px 0;
+    overflow: hidden;
+    margin: 10px;
+}
+
+
+.evaluate_container .general_tweet_container ul {
+    min-height: 100px;
+    padding: 0 10px 0px 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.evaluate_container .ui-draggable.ui-draggable-dragging {  
+    height: 80px;  
+    width: 290px;  
+    z-index: 2;
+}
+
+.evaluate_container .fullname {
+    display: none;
+}
+
+.general_tweet_container .container.tweet_container {
+    position: relative;
+    display: inline-block;
+}
+
+.evaluate_container .container_header {
+    position: relative;
+}
+
+.evaluate_container .general_tweet_container div.buttons {
+    height: 20px;
+}
+
+.evaluate_container .general_tweet_container {
+    padding: 0px 0 5px 0;
+    overflow: hidden;
+}
+
+.general_tweet_container.positive .ui-droppable.dropping {
+    border: 1px solid green;
+    background: hsla(80, 61%, 50%, 0.15);
+    border-radius: 3px;
+}
+
+.general_tweet_container.negative .ui-droppable.dropping {
+    border: 1px solid hsl(7, 100%, 25%);
+    background: hsla(7, 61%, 50%, 0.15);
+    border-radius: 3px;
+}
+
+.general_tweet_container.notr .ui-droppable.dropping {
+    border: 1px solid hsl(7, 0%, 25%);
+    background: hsla(7, 61%, 0%, 0.15);
+    border-radius: 3px;
+}
+
+.evaluate_container .general_tweet_container ul li {
+    height: auto;
+}
+
+.evaluate_container .general_tweet_container ul li.active {
+    box-shadow: inset 0 0px 3px hsl(204, 97%, 56%);
+    border: 1px solid hsl(204, 97%, 66%);
+}

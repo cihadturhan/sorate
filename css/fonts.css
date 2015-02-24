@@ -1,0 +1,24 @@
+@font-face{
+    font-family: "Helvetica Neue";
+    src: url("fonts/ttf/HelveticaNeue.ttf");
+}
+
+@font-face{
+    font-family: "Helvetica Neue Bold";
+    src: url("fonts/ttf/HelveticaNeueBold.ttf");
+}
+
+@font-face{
+    font-family: "Helvetica Neue Italic";
+    src: url("fonts/ttf/HelveticaNeueItalic.ttf");
+}
+
+
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('proxima-nova-bold.eot');
+    src: url('proxima-nova-bold.eot?#iefix') format('embedded-opentype'),
+        url('proxima-nova-bold.woff') format('woff'),
+        url('proxima-nova-bold.ttf') format('truetype'),
+        url('proxima-nova-bold.svg#proximaNovaBold') format('svg');
+}

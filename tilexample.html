@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/tilexample.css" />
+        <script src="js/jquery-1.9.0/jquery.min.js"></script>
+        <script src="js/jquery.transit-0.9.9/jquery.transit.min.js"></script>
+
+    </head>
+    <body>
+        <div class="actual_container">
+            <div class="tile_container animated">
+                <div class="row tiles">
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            $().ready(function() {
+                var container = $('.row.tiles');
+                var cwidth = container.innerWidth();
+                var cleft = container.position().left;
+                var ctop = container.position().top;
+
+                for (var i = 0; i < 30; i++) {
+                    var p = $('<p>').addClass('tile-meta').html(i);
+                    var cls = 'toLeft';
+                    if (i % 6 >= 2 + Math.round(2 * Math.random())) {
+                        cls = 'toright';
+                    }
+                    var d = $('<div>').addClass('tile ' + cls).addClass('tileL' + (i % 2 + 1));
+                    var a = $('<a>').attr('href', '#');
+                    container.append(a.append(d.append(p)));
+                    var left = a.position().left;
+
+                    if (cls === 'toLeft') {
+                        a.find('.tile').css('transform-origin', '-' + left + 'px 50%');
+                    } else {
+                        a.find('.tile').css('transform-origin', cwidth + cleft - left + 'px 50%');
+                    }
+                }
+
+                var something = true;
+
+                $('.row.tiles').delegate('a', 'click', function() {
+                    if (something) {
+                        var maxLength = $('.tile').length;
+                        console.log($(this).find('.tile'));
+                        leftRotate($('.tile'), 0, 60, maxLength, $(this).find('.tile'));
+                        var top = $(this).position().top;
+                        var left = $(this).position().left;
+                        $(this).delay(300).transition({y: ctop - top}, 500).transition({x: cleft - left}, 500);
+                        $(this).find('.tile').delay(800).transition({'background-color': 'yellowgreen'}, 500);
+                    } else {
+                        $(this).find('.tile').transition({'background-color': '#1ba1e1'}, 500);
+                        $(this).transition({x: 0}, 500).transition({y: 0}, 500);
+                        setTimeout(function() {
+                            $('.tile').addClass('noRotate').removeClass('leftRotate').removeClass('rightRotate');
+                        }, 800);
+                    }
+                    something = !something;
+                });
+
+
+                function leftRotate(elem, count, timer, maxLength, This) {
+                    if (count >= maxLength) {
+                        return;
+                    }
+
+                    var rem = (count % 2 == 1 ? 6 - (count % 6) : count % 6);
+
+                    var changedCount = Math.floor(count / 6) * 6 + rem;
+                    var $obj = $(elem[changedCount]);
+                    if (!$obj.is(This))
+                        if ($obj.hasClass('toLeft')) {
+                            $obj.addClass('leftRotate').removeClass('noRotate');
+                        } else {
+                            $obj.addClass('rightRotate').removeClass('noRotate');
+                        }
+                    var currTimer = parseInt(timer * 0.95);
+                    setTimeout(function() {
+                        leftRotate(elem, ++count, currTimer, maxLength, This);
+                    }, timer);
+                }
+
+
+            });
+        </script>
+
+    </body>
+</html>

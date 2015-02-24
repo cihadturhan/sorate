@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Cluster Map Trial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="js/leaflet/leaflet5.1.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB85xCCAVvyMsfMKwnmyI_pqlEKcrxRSL0&sensor=false"></script>
+        <script src="js/leaflet/plugins/Google.js"></script>
+
+        <script src="js/jquery-1.9.0/jquery.min.js"></script>
+        <script src="js/leaflet/plugins/leaflet-markercluster/leaflet.markercluster-src.js"></script>
+
+        <script type="text/javascript" src="js/leaflet/plugins/heatmap/heatmap.js"></script>
+        <script type="text/javascript" src="js/leaflet/plugins/heatmap/heatmap-leaflet.js"></script>
+        <script type="text/javascript" src="js/leaflet/plugins/v3_ll_grat.js"></script>
+
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="css/leaflet/plugins/leaflet-markercluster/MarkerCluster.css" />
+        <link rel="stylesheet" href="css/location.css" />
+
+        <script>
+
+
+            L.TileLayer.HeatMap.prototype.addPoint = function(lat, lon) {
+                this._data.push({lat: lat, lon: lon, value: 1});
+            }
+
+
+
+            /*var heatmapLayer = L.TileLayer.heatMap({
+             radius: 20,
+             opacity: 0.6,
+             gradient: {
+             0.50: "rgb(255,255,255)",
+             0.70: "rgb(200,200,200)",
+             0.80: "rgb(170,170,170)",
+             0.98: "rgb(100,100,100)",
+             1.00: "rgb(0,0,0)"
+             }
+             });*/
+
+            var markerList = [];
+            var cluster = [];
+            var markerLayerGroup = 0;
+
+            var heatmapLayer = L.TileLayer.heatMap({
+                radius: 20,
+                opacity: 0.8,
+                gradient: {
+                    0.50: "rgb(0,0,255)",
+                    0.70: "rgb(0,255,255)",
+                    0.80: "rgb(0,255,0)",
+                    0.98: "yellow",
+                    1.0: "rgb(255,0,0)"
+                }
+            });
+            var grid;
+
+            defaultIconCreate = function(childCount) {
+
+                var c = ' marker-cluster-';
+                if (childCount < 10) {
+                    c += 'small';
+                } else if (childCount < 100) {
+                    c += 'medium';
+                } else {
+                    c += 'large';
+                }
+
+                return new L.DivIcon({html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40)});
+            };
+
+
+            $().ready(function() {
+
+
+                var markers = new L.MarkerClusterGroup(
+                        {
+                            disableClusteringAtZoom: 20
+                        }
+                );
+
+                function setMarkers() {
+                    for (var i = 0; i < cluster.length; i++) {
+
+                        /*var a = bigdata[i];
+                         var title = a[2];
+                         var marker = new L.Marker(new L.LatLng(a[0], a[1]), {title: title});
+                         marker.bindPopup(title);
+                         markerList.push(marker);*/
+
+                        var a = cluster[i];
+                        var icon = defaultIconCreate([parseInt(a[2])]);
+                        markerList[i] = L.marker([a[0], a[1]], {icon: icon});
+
+                        // heatmap
+                        heatmapLayer.addPoint(a[0], a[1]);
+                    }
+
+                    markerLayerGroup = L.layerGroup(markerList).addTo(map);
+                }
+
+
+                /*markers.addLayers(markerList);
+                 markers.on('clusterclick', function(a) {
+                 a.layer.zoomToBounds();
+                 });*/
+
+
+                var map = new L.Map($('.map')[0], {center: new L.LatLng(38.963745, 35.243322), zoom: 7, zoomAnimation: false, zoomControl: false});
+                var layer = new L.Google('ROADMAP');
+
+
+                map.addLayer(layer);
+
+                layer.setCoordMap();
+                layer.setOptions();
+                //map.addLayer(markers);
+                //map.addLayer(heatmapLayer);
+                heatmapLayer._cache.max = 2; //heatmapLayer._calculateMaxValue(heatmapLayer._data)
+                heatmapLayer.redraw();
+                //map.addControl(new L.Control.Layers({"Google": layer}));
+
+
+                var southWest = new L.LatLng(34, 22);
+                var northEast = new L.LatLng(44, 49);
+                var bounds = new L.LatLngBounds(southWest, northEast);
+                /*map.setMaxBounds(bounds);*/
+
+
+
+
+                //listeners
+
+                map.whenReady(function() {
+                    var bounds = map.getBounds();
+                    $('.x1').val(bounds._northEast.lat);
+                    $('.y1').val(bounds._northEast.lng);
+                    $('.x2').val(bounds._southWest.lat);
+                    $('.y2').val(bounds._southWest.lng);
+                })
+
+                map.on("zoomend dragend", function(e) {
+                    var bounds = map.getBounds();
+                    var nelat = bounds._northEast.lat,
+                            nelng = bounds._northEast.lng,
+                            swlat = bounds._southWest.lat,
+                            swlng = bounds._southWest.lng;
+                    $('.x1').val(nelat);
+                    $('.y1').val(nelng);
+                    $('.x2').val(swlat);
+                    $('.y2').val(swlng);
+                    $.get('clusterServlet', {
+                        nelat: nelat,
+                        nelng: nelng,
+                        swlat: swlat,
+                        swlng: swlng,
+                        cluster: 20
+                    }, function(data) {
+                        $('.output').val(JSON.stringify(data));
+                        cluster = data;
+                        console.log(cluster);
+                        setMarkers();
+                    }, 'json');
+                });
+
+
+                $('.output').keypress(function(e) {
+                    if (e.which === 13) {
+                        if (markerLayerGroup) {
+                            markerLayerGroup.clearLayers();
+                            markerList = [];
+                        }
+
+                        try {
+                            cluster = JSON.parse($(this).val());
+                            console.log(cluster);
+                            setMarkers();
+
+                        } catch (e) {
+                            alert('Error in parsing.');
+                        }
+                        return false;
+                    }
+                })
+
+
+
+
+
+            });
+
+        </script>
+
+
+
+
+    </head>
+    <body>
+        <div class="map"></div>
+
+        <div class="input_box">
+
+            <input type="text" class="x1"/>
+            <input type="text" class="y1"/>
+            <input type="text" class="x2"/>
+            <input type="text" class="y2"/>
+
+            <textarea class="output">[[42.21703972667456,29.174057779833674,0],[41.48386329039931,26.464141042903066,1],[38.84476374834776,36.456258822232485,2],[42.24808328598738,40.51198063325137,3],[38.268736865371466,31.03728337585926,4],[39.024967800825834,28.276695114560425,5],[40.42615379020572,35.222904993221164,6],[37.94877671636641,44.76939354930073,7],[36.2732153814286,35.76587847340852,8],[40.91545500420034,40.8604279756546,9],[41.7895705383271,43.46197741944343,10],[42.0505180247128,28.089987522922456,11],[39.68713250383735,30.995280532166362,12],[42.61781423166394,32.925807003863156,13],[36.806278225034475,33.30385902803391,14],[36.657524386420846,31.500620021484792,15],[37.07356612198055,37.602846533060074,16],[42.18025613762438,27.280585317872465,17],[37.31195149756968,40.31538999080658,18],[42.6222955994308,34.40100913308561,19],[42.92581388168037,42.84432882349938,20],[42.997540233656764,27.438194294460118,21],[38.75494389794767,36.62410873826593,22],[37.79834431782365,26.575381251983345,23],[36.540814980864525,32.936470600776374,24],[41.182555094361305,36.40324792731553,25],[40.085031194612384,44.26426897197962,26],[42.356324980035424,31.811627353541553,27],[36.28880278021097,27.33580149151385,28],[36.982382867485285,44.17782056517899,29],[42.79165927134454,41.68772763479501,30],[37.77121426910162,35.585606288164854,31],[37.284692870453,40.47050099726766,32],[35.10098360478878,26.44615033082664,33],[37.36363877169788,37.056159543804824,34],[36.48486519046128,39.044332675635815,35],[39.981270579621196,33.84171593375504,36],[37.42033041641116,28.47990979347378,37],[36.437174355611205,27.403099433518946,38],[39.196472588926554,42.2133387895301,39],[38.76859054900706,34.15616364590824,40],[42.6872483342886,26.82309731747955,41],[35.56676625832915,35.024625392630696,42],[38.61350579559803,44.448521895334125,43],[41.12614903226495,26.068753762170672,44],[37.57268595509231,45.75606859661639,45],[39.66850497573614,44.59680715482682,46],[42.69934668391943,44.59330859966576,47],[39.1044522896409,45.131915802136064,48],[35.74909573234618,30.474456515163183,49],[38.55520122870803,37.624828800559044,50],[39.8499751072377,40.12774706725031,51],[41.18992923758924,43.23770129494369,52],[35.51439821533859,33.3512232163921,53],[35.05785402096808,27.599866822361946,54],[39.77308455854654,42.276066321879625,55],[35.73956839367747,38.89582524448633,56],[40.91813756339252,31.86825248785317,57],[39.431598633527756,36.30116403941065,58],[35.79151666909456,44.4438201924786,59],[41.861490385606885,41.55313142482191,60],[42.84060275182128,30.151541334576905,61],[35.35549854673445,37.49416965432465,62],[42.95660799369216,40.61453020107001,63],[41.52135706692934,29.084892304614186,64],[37.95744748041034,37.593314870260656,65],[39.50911940447986,42.2301614228636,66],[40.98079518601298,39.10762979090214,67],[37.85173543356359,42.79367552045733,68],[40.97777976281941,34.27629189938307,69],[39.36735769920051,45.139245278202,70],[36.70258646644652,45.550542179495096,71],[35.35315873101354,38.62260780669749,72],[36.23837176337838,35.909053752198815,73],[40.72599150799215,39.23668180499226,74],[42.89721252210438,36.99172255024314,75],[38.81512937322259,35.943938362412155,76],[36.3856008015573,41.78717899508774,77],[42.407307444140315,26.271258279681206,78],[35.13849884085357,37.25355896074325,79],[35.51740019209683,40.85367620829493,80],[36.78805277869105,33.46582303196192,81],[39.88406220264733,31.535019771195948,82],[35.8958421703428,44.94368193577975,83],[42.386929562315345,33.09160810802132,84],[35.49178986996412,34.69171885307878,85],[39.24830686300993,28.18999544158578,86],[37.88550486601889,34.192734071053565,87],[42.57292144931853,32.82691368274391,88],[40.409448912367225,45.54369781538844,89],[38.29523951373994,42.53609060216695,90],[39.79078724235296,39.69351922534406,91],[38.94622150436044,36.07431129459292,92],[39.90349190309644,44.981281500309706,93],[39.17523290775716,38.20256694126874,94],[37.415813125669956,34.51922903675586,95],[37.92450246959925,40.42988891154528,96],[37.95670314133167,40.327266262844205,97],[37.698937928304076,41.384654072113335,98],[38.29734201170504,30.600485637784004,99]]
+            </textarea>
+        </div>
+    </body>
+</html>
+
+
+<!-- 
+<html>
+    <head>
+        <title>Leaflet</title>
+        <link rel="stylesheet" href="css/leaflet/leaflet.css" />
+        <script src="js/leaflet/leaflet5.1.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB85xCCAVvyMsfMKwnmyI_pqlEKcrxRSL0&sensor=false"></script>
+        <script src="js/leaflet/plugins/Google.js"></script>
+    </head>
+    <body>
+
+        <div style="width:100%; height:100%" id="map"></div>
+        <script type='text/javascript'>
+
+        </script>
+
+    </body>
+</html>
+
+-->
